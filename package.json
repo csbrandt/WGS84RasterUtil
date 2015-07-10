@@ -1,0 +1,42 @@
+{
+  "name": "wgs84-raster-util",
+  "version": "1.0.0",
+  "description": "Geographic utilities for manipulating raster graphics using WGS84 datum",
+  "main": "index.js",
+  "scripts": {
+    "test": "make test",
+    "coverage": "istanbul cover _mocha test --recursive -- -u      exports -R spec",
+    "build": "browserify index.js > dist/bundle.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/csbrandt/WGS84RasterUtil.git"
+  },
+  "keywords": [
+    "wgs84",
+    "raster",
+    "geodesy",
+    "GeoJSON"
+  ],
+  "author": "csbrandt",
+  "license": "MPL-2.0",
+  "bugs": {
+    "url": "https://github.com/csbrandt/WGS84RasterUtil/issues"
+  },
+  "homepage": "https://github.com/csbrandt/WGS84RasterUtil",
+  "devDependencies": {
+    "browserify": "^10.2.4",
+    "expect.js": "^0.3.1",
+    "grunt": "^0.4.5",
+    "grunt-contrib-coffee": "^0.13.0",
+    "grunt-contrib-jshint": "^0.11.2",
+    "grunt-jsbeautifier": "^0.2.10",
+    "istanbul": "^0.3.17",
+    "load-grunt-tasks": "^3.2.0",
+    "mocha": "^2.2.5",
+    "request": "^2.58.0"
+  },
+  "dependencies": {
+    "wgs84-util": "^2.0.1"
+  }
+}
