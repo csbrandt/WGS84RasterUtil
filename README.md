@@ -45,6 +45,19 @@ Methods
 >
 > *array*, coordinates of a bounding polygon for the column
 
+    pointCell(extent, rasterDimensions, pointCoord)
+> **extent**:  *array*, bounding box coordinates in the form: [xLow, yLow, xHigh, yHigh]
+>
+> **rasterDimensions**:  *object*
+>    + width:  *number*, discrete units for row size
+>    + height:  *number*, discrete units for column size
+>
+> **pointCoord**:  *object*, GeoJSON point
+>
+> **Returns**
+>
+> *object*, GeoJSON point containing cell coordinates referenced by `pointCoord`
+
 Running Tests
 --------------
 Install the development dependencies:

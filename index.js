@@ -46,3 +46,37 @@ WGS84RasterUtil.cellBounds = function(NWRowCornerCoord, SWRowCornerCoord, cellSi
 
    return cellBounds;
 };
+
+WGS84RasterUtil.pointCell = function(extent, rasterDimensions, pointCoord) {
+   var SWCorner = {
+      "coordinates": [extent[0], extent[1]]
+   };
+   var NWCorner = {
+      "coordinates": [extent[0], extent[3]]
+   };
+   var NECorner = {
+      "coordinates": [extent[2], extent[3]]
+   };
+   var pointCell = {
+      "type": "Point"
+   };
+   var width;
+   var height;
+   var easting;
+   var northing;
+
+   width = WGS84Util.distanceBetween(NWCorner, NECorner);
+   height = WGS84Util.distanceBetween(NWCorner, SWCorner);
+   easting = WGS84Util.distanceBetween(NWCorner, {
+      "coordinates": [pointCoord.coordinates[0], NWCorner.coordinates[1]]
+   });
+   northing = WGS84Util.distanceBetween(NWCorner, {
+      "coordinates": [NWCorner.coordinates[0], pointCoord.coordinates[1]]
+   });
+   pointCell.coordinates = [
+      Math.round(rasterDimensions.width / width * easting),
+      Math.round(rasterDimensions.height / height * northing)
+   ];
+
+   return pointCell;
+};

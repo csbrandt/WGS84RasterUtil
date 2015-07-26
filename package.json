@@ -1,6 +1,6 @@
 {
   "name": "wgs84-raster-util",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Geographic utilities for manipulating raster graphics using WGS84 datum",
   "main": "index.js",
   "scripts": {
